@@ -86,7 +86,7 @@ def get_record_file(file_path, output_path=None):
             f1.write(line)
         f1.close()
         print(f"\n\nall done , save in {output_path}, have a nice day!!!")
-        print("shutting down at {0} 共耗时{1}秒".format(time.strftime("%X"), time.time() - start_time))
+        print("shutting down at {0} 共耗时{1}秒\n".format(time.strftime("%X"), time.time() - start_time))
 
 
 def get_record_list(*args):
