@@ -58,7 +58,7 @@ def get_record_file(file_path, output_path=None):
     start_time = time.time()
     f1 = open(output_path, mode="w", encoding="u8")
     with open(file_path, mode="r", encoding="u8") as f:
-        print("{:<40s}{:<40s}{:<40s}{:30s}".format("Domain", "CNAME", "NS", "A"))
+        print("{:<30s}{:<30s}{:<30s}{:30s}".format("Domain", "CNAME", "NS", "A"))
         for line in f:
             domain = line.strip("\n")
             domain = domain_extract(domain)
@@ -80,7 +80,7 @@ def get_record_file(file_path, output_path=None):
             else:
                 getns = ""
 
-            print('{:<40s}{:<40s}{:<40s}{:<40s}'.format(domain, getcname, getns, getdns_str))
+            print('{:<30s}{:<30s}{:<30s}{:<30s}'.format(domain, getcname, getns, getdns_str))
             # 写入
             line = "{:<40s}{:<40s}\n".format(domain, getdns_str)
             f1.write(line)
@@ -92,7 +92,7 @@ def get_record_file(file_path, output_path=None):
 def get_record_list(*args):
     if args is None:
         sys.exit(1)
-    print("{:<40s}{:<40s}{:<40s}{:30s}".format("Domain", "CNAME", "NS", "A"))
+    print("{:<30s}{:<30s}{:<30s}{:30s}".format("Domain", "CNAME", "NS", "A"))
     for key in args:
         for line in key:
             domain = line.strip("\n")
@@ -114,7 +114,7 @@ def get_record_list(*args):
                 getns = getns
             else:
                 getns = ""
-            print('{:<40s}{:<40s}{:<40s}{:<40s}'.format(domain, getcname, getns, getdns))
+            print('{:<30s}{:<30s}{:<30s}{:<30s}'.format(domain, getcname, getns, getdns))
 
 
 def main():
